@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить книгу</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Добавить новую книгу</h1>
+    <form action="{{ url_for('add_book') }}" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="title">Название книги:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div>
+            <label for="description">Описание:</label>
+            <textarea id="description" name="description" required></textarea>
+        </div>
+        <div>
+            <label for="composer">Композитор:</label>
+            <input type="text" id="composer" name="composer" required>
+        </div>
+        <div>
+            <label for="author">Автор:</label>
+            <input type="text" id="author" name="author" required>
+        </div>
+        <div>
+            <label for="key">Тональность:</label>
+            <input type="text" id="key" name="key" required>
+        </div>
+        <div>
+            <label for="genre">Жанр:</label>
+            <input type="text" id="genre" name="genre" required>
+        </div>
+        <div>
+            <label for="pdf">PDF файл:</label>
+            <input type="file" id="pdf" name="pdf" accept="application/pdf" required>
+        </div>
+        <div>
+            <button type="submit">Добавить книгу</button>
+        </div>
+    </form>
+    <a href="{{ url_for('index') }}">Назад к списку</a>
+</body>
+</html>
